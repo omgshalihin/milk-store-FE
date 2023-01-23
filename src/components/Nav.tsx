@@ -6,6 +6,7 @@ const Nav = () => {
   return (
     <header className={styles.header}>
       <nav>
+        <h1>THE MILK STORE</h1>
         <ul className={styles.list}>
           <li>
             <NavLink

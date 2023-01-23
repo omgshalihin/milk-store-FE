@@ -1,23 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { FC, useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import Filterbar from "../components/Filterbar";
+import ProductsList from "../components/ProductsList";
+import Searchbar from "../components/Searchbar";
+import { iProduct } from "../iProduct";
+import Product from "./Product";
 
-const PRODUCTS = [
-  { id: "p1", title: "Product 1" },
-  { id: "p2", title: "Product 2" },
-  { id: "p3", title: "Product 3" },
-];
+interface iProps {
+  product: iProduct;
+}
 
-const Products = () => {
+const Products: FC<iProps> = () => {
+  const products: iProduct = useLoaderData();
+
+  if (products === undefined) return <h1>Loading...</h1>;
+
   return (
     <>
-      <h1>The Products Page</h1>
-      <ul>
-        {PRODUCTS.map((product) => (
-          <li key={product.id}>
-            <Link to={`/products/${product.id}`}>{product.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <section>
+        <Searchbar />
+        <Filterbar />
+      </section>
+      <main>
+        <ProductsList products={products} />
+      </main>
     </>
   );
 };
