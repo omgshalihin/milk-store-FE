@@ -9,6 +9,7 @@ const Products: FC = () => {
   const products: any = useLoaderData();
 
   const [query, setQuery] = useState<string>("");
+  const [milkTypes, setMilkTypes] = useState<string[]>([]);
 
   if (products === undefined) return <h1>Loading...</h1>;
 
@@ -25,24 +26,29 @@ const Products: FC = () => {
             }
           />
           <MultiSelect
+            onChange={(e) => setMilkTypes(e)}
             data={[
-              "React",
-              "Angular",
-              "Svelte",
-              "Vue",
-              "Riot",
-              "Next.js",
-              "Blitz.js",
+              "whole milk",
+              "oat milk",
+              "pea milk",
+              "almond milk",
+              "rice milk",
+              "coconut milk",
+              "soy milk",
+              "walnut milk",
+              "macadamia milk",
+              "hemp milk",
+              "cashew milk",
             ]}
             placeholder="Milk Type"
             searchable
-            nothingFound="Nothing found"
+            nothingFound="No milk types found"
           />
         </section>
       </Container>
 
       <main>
-        <ProductsList products={products} query={query} />
+        <ProductsList products={products} query={query} milkTypes={milkTypes} />
       </main>
     </>
   );
