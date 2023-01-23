@@ -18,9 +18,14 @@ import styles from "./ProductsList.module.css";
 
 interface iProps {
   products: iProduct[];
+  query: string;
 }
 
-const ProductsList: FC<iProps> = ({ products }) => {
+const ProductsList: FC<iProps> = ({ products, query }) => {
+  const filteredProducts = products.filter((p) =>
+    p.name.toLowerCase().includes(query.toLowerCase())
+  );
+
   const navigate = useNavigate();
 
   const navigateHandler = (product: iProduct) => {
@@ -30,8 +35,11 @@ const ProductsList: FC<iProps> = ({ products }) => {
   return (
     <>
       <Container py="xl">
+        <section className={styles.total}>
+          <p>{filteredProducts.length} products</p>
+        </section>
         <SimpleGrid cols={3} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <Card
               className={styles.card}
               key={product.id}
