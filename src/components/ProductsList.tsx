@@ -48,7 +48,10 @@ const ProductsList: FC<iProps> = ({ products, query, milkTypes }) => {
     <>
       <Container py="xl">
         <section className={styles.total}>
-          <p>{searchedProducts.length} products</p>
+          <p>
+            {(!filterIsActive ? searchedProducts : filteredProducts).length}{" "}
+            products
+          </p>
         </section>
         <SimpleGrid cols={3} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
           {(!filterIsActive ? searchedProducts : filteredProducts).map(
