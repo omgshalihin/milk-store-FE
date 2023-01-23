@@ -6,12 +6,8 @@ import Searchbar from "../components/Searchbar";
 import { iProduct } from "../iProduct";
 import Product from "./Product";
 
-interface iProps {
-  product: iProduct;
-}
-
-const Products: FC<iProps> = () => {
-  const products: iProduct = useLoaderData();
+const Products: FC = () => {
+  const products: any = useLoaderData();
 
   if (products === undefined) return <h1>Loading...</h1>;
 

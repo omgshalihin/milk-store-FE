@@ -1,5 +1,5 @@
 export interface iProduct {
-  map: any;
+  map?: any;
   name: string;
   type: string;
   storage: number;
