@@ -63,6 +63,7 @@ const Product: FC = () => {
                   { value: 80, label: "80%" },
                 ]}
               />
+
               <Button size="xl" leftIcon={<IconShoppingCartPlus size={30} />}>
                 <Text>Order {value} liter</Text>
               </Button>
