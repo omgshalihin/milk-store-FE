@@ -1,4 +1,5 @@
 # milk-store-FE
+[App](https://superb-sfogliatella-51fb95.netlify.app)
 
 ## Background
 A small local milk shop needs your help desperately. Lately they started getting a lot of business, and they feel that they need a proper website to take a load off their store. The milk at this store is sold by the liter, and if you thought there was only one type of milk you are waay off! There will be several different types of milk, and you need to make sure that the customer can easily find the type they want! The requirements won’t tell you everything, some parts you need to figure out yourself.
