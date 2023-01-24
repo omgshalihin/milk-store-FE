@@ -21,7 +21,7 @@ import styles from "./Product.module.css";
 const Product: FC = () => {
   const product: any = useLoaderData();
 
-  const [value, setValue] = useState(100);
+  const [value, setValue] = useState<number>(100);
 
   return (
     <>
@@ -55,9 +55,17 @@ const Product: FC = () => {
                 { value: 80, label: "80%" },
               ]}
             />
+            {value == 100 ? (
+              <Text>You have reached the MAX</Text>
+            ) : (
+              <Text>
+                Use slider to indicate the amount of milk you would like to
+                order
+              </Text>
+            )}
 
             <Button size="xl" leftIcon={<IconShoppingCartPlus size={30} />}>
-              <Text>Order {value} liter</Text>
+              <Text>Order {(value * product.storage) / 100} liter</Text>
             </Button>
           </Flex>
         </SimpleGrid>

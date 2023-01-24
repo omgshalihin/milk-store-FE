@@ -1,4 +1,3 @@
-import { FC, useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import styles from "./App.module.css";
 import { iProduct } from "./iProduct";
@@ -25,10 +24,10 @@ const router = createBrowserRouter([
             index: true,
             element: <Products />,
             loader: async () => {
-              const fetchProducts = await fetch(
+              const fetchProducts: Response = await fetch(
                 "http://localhost:8080/api/v1/products"
               );
-              const response = await fetchProducts.json();
+              const response: iProduct[] = await fetchProducts.json();
               return response;
             },
           },
@@ -40,7 +39,7 @@ const router = createBrowserRouter([
               const fetchProducts = await fetch(
                 `http://localhost:8080/api/v1/products/${params.id}`
               );
-              const response = await fetchProducts.json();
+              const response: iProduct = await fetchProducts.json();
               return response;
             },
           },
@@ -50,19 +49,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App: FC = () => {
-  // const [products, setProducts] = useState();
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     const fetchProducts = await fetch(
-  //       "http://localhost:8080/api/v1/products"
-  //     );
-  //     const response = await fetchProducts.json();
-  //     setProducts(response);
-  //   };
-  //   getProducts();
-  // }, []);
-
+const App = () => {
   return (
     <div className={styles.app}>
       <RouterProvider router={router} />
