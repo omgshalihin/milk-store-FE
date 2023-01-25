@@ -3,9 +3,6 @@ import {
   Image,
   Text,
   AspectRatio,
-  Badge,
-  Group,
-  ActionIcon,
   Container,
   SimpleGrid,
   Slider,
@@ -13,8 +10,8 @@ import {
   Flex,
 } from "@mantine/core";
 import { IconShoppingCartPlus } from "@tabler/icons";
-import React, { FC, useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import React, { FC, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import { iProduct } from "../iProduct";
 import styles from "./Product.module.css";
 
@@ -26,7 +23,11 @@ const Product: FC = () => {
   return (
     <>
       <Container py="xl">
-        <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
+        <SimpleGrid
+          mt={200}
+          cols={2}
+          breakpoints={[{ maxWidth: "sm", cols: 1 }]}
+        >
           <Card p="md" radius="md" component="a">
             <AspectRatio ratio={1 / 1}>
               <Image src="/milk.png" />

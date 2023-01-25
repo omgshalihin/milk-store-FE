@@ -3,17 +3,13 @@ import {
   Image,
   Text,
   AspectRatio,
-  Badge,
   Group,
-  ActionIcon,
   Container,
   SimpleGrid,
 } from "@mantine/core";
-import { IconHeart } from "@tabler/icons";
 import React, { FC, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { iProduct } from "../iProduct";
-import Product from "../pages/Product";
 import styles from "./ProductsList.module.css";
 
 interface iProps {

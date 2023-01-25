@@ -4,3 +4,11 @@
   margin-top: 0px;
   padding: 200px;
 }
+
+.carousel {
+  background-color: pink;
+}
+
+.carousel h1 {
+  bottom: 0;
+}
