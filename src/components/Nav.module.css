@@ -1,10 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Lemon&display=swap");
 .header {
   max-width: 100vw;
   margin: auto;
   padding: 2rem;
   display: flex;
   justify-content: center;
-  background-color: pink;
+  background-color: white;
+  color: rgb(255, 255, 255);
+  font-family: "Lemon", cursive;
+  position: fixed;
+  z-index: 100;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background-color: #ff69b45c;
+  font-size: 1.5em;
+  left: 0;
+  right: 0;
 }
 
 .list {
@@ -17,10 +28,11 @@
 
 .list a {
   text-decoration: none;
+  color: black;
 }
 
 .list a:hover,
 .list a.active {
   text-decoration: underline;
-  color: green;
+  color: #ff69b4;
 }

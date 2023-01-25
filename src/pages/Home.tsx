@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import styles from "./Home.module.css";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <main className={styles.home__container}>
       <h1>My Home Page</h1>
       <p>
         Go to <Link to="/products">list of products</Link>.
@@ -71,7 +72,7 @@ const Home = () => {
         quae voluptate nemo eius hic repellendus, ab dignissimos deserunt, odit
         earum rem magnam ea totam ipsam incidunt dolorum? Nihil, mollitia esse!
       </p>
-    </>
+    </main>
   );
 };
 

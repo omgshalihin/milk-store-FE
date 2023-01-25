@@ -1,6 +1,15 @@
 .card {
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(242, 242, 242);
+  filter: contrast(85%);
+  transition: 150ms ease;
 }
 .total {
   display: flex;
+}
+
+.card:hover {
+  cursor: pointer;
+  filter: contrast(100%);
+  transform: scale(1.01);
+  box-shadow: 10px 0px 0px #ff69b4;
 }

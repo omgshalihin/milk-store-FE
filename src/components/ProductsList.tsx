@@ -68,13 +68,17 @@ const ProductsList: FC<iProps> = ({ products, query, milkTypes }) => {
                   <Image src="/milk.png" />
                 </AspectRatio>
 
-                <Card.Section bg="white">
+                <Card.Section bg="white" className={styles.card__details}>
                   <Group position="apart" pl="md" pr="md" pt="md">
                     <Text>{product.name}</Text>
                   </Group>
                   <Group position="apart" p="md">
                     <Text color="dimmed">{product.type}</Text>
-                    <Text color="dimmed">{product.storage} liter</Text>
+                    {product.storage! < 10 ? (
+                      <Text color="red">{product.storage} liter</Text>
+                    ) : (
+                      <Text color="green">{product.storage} liter</Text>
+                    )}
                   </Group>
                 </Card.Section>
               </Card>
