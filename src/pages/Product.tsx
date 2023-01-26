@@ -20,6 +20,11 @@ const Product: FC = () => {
 
   const [value, setValue] = useState<number>(100);
 
+  const orderHandler = (orderQty: number) => {
+    console.log("order");
+    console.log(orderQty);
+  };
+
   return (
     <>
       <Container py="xl">
@@ -65,7 +70,11 @@ const Product: FC = () => {
               </Text>
             )}
 
-            <Button size="xl" leftIcon={<IconShoppingCartPlus size={30} />}>
+            <Button
+              size="xl"
+              leftIcon={<IconShoppingCartPlus size={30} />}
+              onClick={() => orderHandler((value * product.storage) / 100)}
+            >
               <Text>Order {(value * product.storage) / 100} liter</Text>
             </Button>
           </Flex>

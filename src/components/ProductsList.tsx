@@ -50,8 +50,9 @@ const ProductsList: FC<iProps> = ({ products, query, milkTypes }) => {
           </p>
         </section>
         <SimpleGrid cols={3} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
-          {(!filterIsActive ? searchedProducts : filteredProducts).map(
-            (product) => (
+          {(!filterIsActive ? searchedProducts : filteredProducts)
+            .sort((a, b) => b.storage - a.storage)
+            .map((product) => (
               <Card
                 className={styles.card}
                 key={product.id}
@@ -78,8 +79,7 @@ const ProductsList: FC<iProps> = ({ products, query, milkTypes }) => {
                   </Group>
                 </Card.Section>
               </Card>
-            )
-          )}
+            ))}
         </SimpleGrid>
       </Container>
     </>
