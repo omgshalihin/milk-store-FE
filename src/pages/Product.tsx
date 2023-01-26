@@ -16,13 +16,18 @@ import { iProduct } from "../iProduct";
 import styles from "./Product.module.css";
 
 const Product: FC = () => {
-  const product: any = useLoaderData();
+  const product: iProduct | any = useLoaderData();
 
   const [value, setValue] = useState<number>(100);
 
   const orderHandler = (orderQty: number) => {
     console.log("order");
     console.log(orderQty);
+    console.log(product);
+    fetch(`http://localhost:8080/api/v1/products/${product.id}/${orderQty}`, {
+      method: "PATCH",
+      mode: "cors",
+    });
   };
 
   return (
