@@ -23,9 +23,6 @@ const Product: FC = () => {
   const navigate = useNavigate();
 
   const orderHandler = (orderQty: number) => {
-    console.log("order");
-    console.log(orderQty);
-    console.log(product);
     fetch(`http://localhost:8080/api/v1/products/${product.id}/${orderQty}`, {
       method: "PATCH",
       mode: "cors",
@@ -55,7 +52,7 @@ const Product: FC = () => {
                 {product.type}
               </Text>
               <Text color="dimmed" align="left" size="xl">
-                {product.storage}
+                {product.storage.toFixed(2)}
               </Text>
             </div>
 
@@ -83,7 +80,9 @@ const Product: FC = () => {
               leftIcon={<IconShoppingCartPlus size={30} />}
               onClick={() => orderHandler((value * product.storage) / 100)}
             >
-              <Text>Order {(value * product.storage) / 100} liter</Text>
+              <Text>
+                Order {((value * product.storage) / 100).toFixed(2)} liter
+              </Text>
             </Button>
           </Flex>
         </SimpleGrid>

@@ -72,9 +72,13 @@ const ProductsList: FC<iProps> = ({ products, query, milkTypes }) => {
                   <Group position="apart" p="md">
                     <Text color="dimmed">{product.type}</Text>
                     {product.storage! < 10 ? (
-                      <Text color="red">{product.storage} liter</Text>
+                      <Text color="red">
+                        {product.storage.toFixed(2)} liter
+                      </Text>
                     ) : (
-                      <Text color="green">{product.storage} liter</Text>
+                      <Text color="green">
+                        {product.storage.toFixed(2)} liter
+                      </Text>
                     )}
                   </Group>
                 </Card.Section>
