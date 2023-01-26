@@ -11,7 +11,7 @@ import {
 } from "@mantine/core";
 import { IconShoppingCartPlus } from "@tabler/icons";
 import React, { FC, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { iProduct } from "../iProduct";
 import styles from "./Product.module.css";
 
@@ -19,6 +19,8 @@ const Product: FC = () => {
   const product: iProduct | any = useLoaderData();
 
   const [value, setValue] = useState<number>(100);
+
+  const navigate = useNavigate();
 
   const orderHandler = (orderQty: number) => {
     console.log("order");
@@ -28,6 +30,7 @@ const Product: FC = () => {
       method: "PATCH",
       mode: "cors",
     });
+    navigate(`success`);
   };
 
   return (

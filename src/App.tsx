@@ -7,6 +7,7 @@ import Layout from "./pages/Layout";
 import Product from "./pages/Product";
 import Products from "./pages/Products";
 import ProductsLayout from "./pages/ProductsLayout";
+import Success from "./pages/Success";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
               const response: iProduct = await fetchProducts.json();
               return response;
             },
+          },
+          {
+            path: ":id/success",
+            element: <Success />,
           },
         ],
       },
