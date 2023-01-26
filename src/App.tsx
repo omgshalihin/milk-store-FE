@@ -19,8 +19,8 @@ const router = createBrowserRouter([
         element: <Home />,
         loader: async () => {
           const fetchProducts: Response = await fetch(
-            "https://milk-store-be-production.up.railway.app/api/v1/products"
-            // "http://localhost:8080/api/v1/products"
+            // "https://milk-store-be-production.up.railway.app/api/v1/products"
+            "http://localhost:8080/api/v1/products"
           );
           const response: iProduct[] = await fetchProducts.json();
           return response;
@@ -36,8 +36,8 @@ const router = createBrowserRouter([
             element: <Products />,
             loader: async () => {
               const fetchProducts: Response = await fetch(
-                "https://milk-store-be-production.up.railway.app/api/v1/products"
-                // "http://localhost:8080/api/v1/products"
+                // "https://milk-store-be-production.up.railway.app/api/v1/products"
+                "http://localhost:8080/api/v1/products"
               );
               const response: iProduct[] = await fetchProducts.json();
               return response;
@@ -49,8 +49,8 @@ const router = createBrowserRouter([
             element: <Product />,
             loader: async ({ params }) => {
               const fetchProducts = await fetch(
-                `https://milk-store-be-production.up.railway.app/api/v1/products/${params.id}`
-                // `http://localhost:8080/api/v1/products/${params.id}`
+                // `https://milk-store-be-production.up.railway.app/api/v1/products/${params.id}`
+                `http://localhost:8080/api/v1/products/${params.id}`
               );
               const response: iProduct = await fetchProducts.json();
               return response;

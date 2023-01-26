@@ -15,7 +15,7 @@ const Products: FC = () => {
 
   return (
     <>
-      <Container pt={200}>
+      <Container pt={250}>
         <section className={styles.search__filter}>
           <TextInput
             placeholder="Search"

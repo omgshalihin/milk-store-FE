@@ -24,7 +24,7 @@ const Product: FC = () => {
     <>
       <Container py="xl">
         <SimpleGrid
-          mt={200}
+          mt={220}
           cols={2}
           breakpoints={[{ maxWidth: "sm", cols: 1 }]}
         >
