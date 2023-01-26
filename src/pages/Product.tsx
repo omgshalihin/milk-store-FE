@@ -23,10 +23,14 @@ const Product: FC = () => {
   const navigate = useNavigate();
 
   const orderHandler = (orderQty: number) => {
-    fetch(`http://localhost:8080/api/v1/products/${product.id}/${orderQty}`, {
-      method: "PATCH",
-      mode: "cors",
-    });
+    fetch(
+      // `http://localhost:8080/api/v1/products/${product.id}/${orderQty}`,
+      `https://milk-store-be-production.up.railway.app/api/v1/products/${product.id}/${orderQty}`,
+      {
+        method: "PATCH",
+        mode: "cors",
+      }
+    );
     navigate(`success`);
   };
 
