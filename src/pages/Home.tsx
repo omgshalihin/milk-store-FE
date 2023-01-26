@@ -23,8 +23,8 @@ const Home: FC = () => {
     <>
       <main className={styles.home__container}>
         <h1>Welcome!</h1>
-        <Button size="lg" onClick={navigateHandler}>
-          Bring me to all milk products
+        <Button color="pink" size="lg" onClick={navigateHandler}>
+          View all products
         </Button>
         <h2>Here are {bestProducts.length} of our best selling milk</h2>
         <Carousel
